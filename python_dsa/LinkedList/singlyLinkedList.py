@@ -71,24 +71,19 @@ class singlyLinkedList:
         if self.isempty():
             print("Linked list is empty!..")
         else:
-            p = None
-            i = 0
+            p = self._head
+            i = 1
             while i < self.__len__()-1:
-                if p:
-                    p = p._next
-                else:
-                    p = self._head
+                p = p._next
                 i += 1
             r = self._tail._element
             self._tail = p
-
-            if self._tail != None:
-                self._tail._next = None
-            else:
-                self._head = None
-            
+            self._tail._next = None
             self._size -= 1
-        
+
+            if self.isempty():
+                self._head = None
+                self._tail = None
         return r
     
     def removeany(self, position):
