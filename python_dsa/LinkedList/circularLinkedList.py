@@ -4,7 +4,7 @@ class _Node:
         self._element = element
         self._next = next
 
-class singlyLinkedList:
+class circularLinkedList:
     def __init__(self):
         self._head = None
         self._tail = None
@@ -20,10 +20,10 @@ class singlyLinkedList:
         new = _Node(e, None)
         if self.isempty():
             self._head = new
-            self._tail = new
         else:
             self._tail._next = new
-            self._tail = new
+        self._tail = new
+        self._tail._next = self._head
         self._size += 1
     
     def addfirst(self, e):
@@ -34,6 +34,7 @@ class singlyLinkedList:
         else:
             new._next = self._head
             self._head = new
+        self._tail._next = self._head
         self._size += 1
 
     def addany(self, e, position):
@@ -59,6 +60,7 @@ class singlyLinkedList:
         else:
             r = self._head._element
             self._head = self._head._next
+            self._tail._next = self._head
             self._size -= 1
 
         if self._head == None:
@@ -83,7 +85,7 @@ class singlyLinkedList:
             self._tail = p
 
             if self._tail != None:
-                self._tail._next = None
+                self._tail._next = self._head
             else:
                 self._head = None
             
@@ -113,37 +115,43 @@ class singlyLinkedList:
 
     def display(self):
         p = self._head
-        while p:
+        i = 0
+        while i < self.__len__():
             print(p._element, end = "-->")
             p = p._next
+            i += 1
         print()
 
     def search(self, key):
         p = self._head
         index = 0
-        while p:
+        i = 0
+        while i < self.__len__():
             if p._element == key:
                 return index
             p = p._next
             index += 1
+            i += 1
         return -1
 
 
-sl = singlyLinkedList()
-sl.addlast(10)
-sl.addlast(20)
-sl.addlast(30)
-sl.display()
-sl.addfirst(40)
-sl.addfirst(50)
-sl.display()
-sl.addany(100, 3)
-sl.display()
-print(sl.search(50))
-print(sl.removefirst())
-sl.display()
-print(sl.removelast())
-sl.display()
-print(sl.__len__())
-print(sl.removeany(2))
-sl.display()
+cl = circularLinkedList()
+cl.addlast(10)
+cl.addlast(20)
+cl.addlast(30)
+cl.display()
+cl.addfirst(40)
+cl.addfirst(50)
+cl.display()
+cl.addany(100, 3)
+cl.display()
+print(cl.search(50))
+print(cl.removefirst())
+cl.display()
+print(cl.removelast())
+cl.display()
+print(cl.__len__())
+print(cl.removeany(2))
+cl.display()
+print(cl._head)
+print(cl._tail._next)
