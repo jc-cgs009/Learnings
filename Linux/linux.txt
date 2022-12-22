@@ -1,0 +1,2 @@
+cd - change directory
+pwd - present working directory
