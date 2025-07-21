@@ -6,7 +6,7 @@ LINUX COMMANDS :)
 
 3. pwd : The pwd command writes to standard output the full path name of your current directory (from the root directory).
 
-4. ls :  The command is used in listing contents inside a directory. ex :- ls [-a] [-l] ....([] <-- options)
+4. ls :  The command is used in listing contents inside a directory. ex :- ls [-a] [-l] [-t] [-r] ....([] <-- options)
 
 5. cd : Linux cd command is used to change the current working directory. The "cd" stands for 'change directory. ex :- cd ~ [change from current directory to home directory], cd <relative path>, cd <absolute path>
 
@@ -15,3 +15,15 @@ LINUX COMMANDS :)
 	  [help <command>]
 
 7. clear : Clear Terminal screen, via Ctrl+L / Ctrl+Shift+K Shortcut.ex :- (clear [-x] [-v] [-t type])
+
+8. systemctl : a) The systemctl command manages both system and service configurations, enabling administrators to manage the OS and control the status of services. Further, systemctl is useful for troubleshooting and basic performance tuning.
+
+               b) systemctl is the systemd command for controlling how services start on a Linux system. A service can be enabled, disabled, or masked, and it can be configured to start at boot, on demand, manually, or prevented from starting under any circumstances. Enabling a service means it will start at boot.
+
+9. Yum : YUM (Yellowdog Updater Modified) is an open-source command-line as well as graphical-based package management tool for RPM (RedHat Package Manager) based Linux systems. It allows users and system administrators to easily install, update, remove or search software packages on a system.
+
+10. rpm : RPM is a command-line utility for managing packages on Unix/Linux systems. It allows you to install, query, update, verify and remove RPM packages. It is the default package manager for Red Hat based systems and only works with the . rpm format.
+
+11. sudo : Providing root access to all users is not a good practice. Nonetheless, normal users might need to execute some commands as superuser occasionally. This is where the sudo (Super User DO) access comes into the picture. The sudo command provides an efficient way to grant users the special rights to execute commands at the system (root) level. With sudo, we’ll be able to execute administrative tasks without switching users.
+
+12. su : su , on the other hand, is an acronym for switch user or substitute user. You are basically switching to a particular user and you need the password for the user you are switching to. Most often, the user account you switch to is the root account but it can be any account on the system.
