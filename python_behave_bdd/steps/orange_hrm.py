@@ -20,9 +20,9 @@ def login_to_orange_hrm_website(context, username, password):
 @then('verify the login is successful')
 def verify_the_login(context):
     try:
-        user_name = context.driver.find_element(By.XPATH, "//p[text()='manda user']").text
+        user_name = context.driver.find_element(By.XPATH, "//p[text()='Zafar Qaimkhani']").text
     except:
         assert False, "Login failed bcz of invalid creds"
     else:
-        assert "manda user" == user_name
+        assert "Zafar Qaimkhani" == user_name
         context.driver.quit()

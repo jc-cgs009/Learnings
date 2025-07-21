@@ -1,18 +1,20 @@
-Feature: Orange HRM login testcases
+# background : setup -- before executing scenario's if u want to execute something then we can
+# use background.
 
-# tags in behave -- grouping/ tags scenario [sanity, regression, smoke, suhas]
-# cmd - behave folder/file.feature --tags=sanity <tag 2> <tag 3> ...
+
+Feature: Orange HRM login testcases
+  Background:
+    Given opening the orange hrm website
 
   @sanity
   Scenario:validate login with valid credential
-    Given opening the orange hrm website
+
     When give the valid username and password - "Admin" "admin123"
     Then verify the login is successful
 
   # data driven framework
   @suhas
   Scenario Outline: validate login with valid and invalid creds
-    Given opening the orange hrm website
     When give the valid username and password - "<username>" "<password>"
     Then verify the login is successful
     Examples:
