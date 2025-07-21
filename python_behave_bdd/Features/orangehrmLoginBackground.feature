@@ -1,6 +1,13 @@
 # background : setup -- before executing scenario's if u want to execute something then we can
 # use background.
 
+# Allure report
+  # pip install allure-behave
+  # cmd - behave -f allure_behave.formatter:AllureFormatter -o "report_folder_name" featureFolder/
+  # --> after running above command, A folder[report_folder_name] will create which contains the
+  # report of all the tc's in json format.
+  # cmd to generate allure report [ui] --> allure serve folder[report_folder_name]
+
 
 Feature: Orange HRM login testcases
   Background:
